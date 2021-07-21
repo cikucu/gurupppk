@@ -558,7 +558,7 @@
                                     data[0].kode_prodi +
                                     "&kodeInstansi=" +
                                     data[0].kode_instansi +
-                                    "&kodeSertif=null";
+                                    "&kodeSertif="+data[0].kode_bidang_studi_sertifikasi;
 
                                 // data jabatan
                                 $.ajax({
@@ -608,6 +608,7 @@
                                             element_jabatan
                                         );
 
+                                        var element_formasi = '';
                                         for (
                                             j = 0;
                                             j < dataIdJabatanMenpan.length;
@@ -620,7 +621,7 @@
                                                 data[0].kode_instansi +
                                                 "&idJabatanMenpan=" +
                                                 dataIdJabatanMenpan[j] +
-                                                "&kodeSertif=null";
+                                                "&kodeSertif="+data[0].kode_bidang_studi_sertifikasi;
 
                                             // data formasi
                                             $.ajax({
@@ -630,9 +631,7 @@
                                                 type: "GET",
                                                 dataType: "json",
                                                 success: function(dataFormasi) {
-                                                    var element_formasi = $(
-                                                        "#list-formasi"
-                                                    ).html();
+                                                    
 
                                                     for (
                                                         k = 0;
